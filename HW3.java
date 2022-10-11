@@ -25,11 +25,20 @@ public class HW3 {   // To enable assertions, run with java -ea HW3
     System.out.println("running check...");
     if (args.length == 3) {
       try {
-        int i = Integer.valueOf(args[0]);
-        int j = Integer.valueOf(args[1]);
-        int k = Integer.valueOf(args[2]);
+        double max = 1000;
+        double min = 0;
+
+        int i = (int) (Math.random()*(max-min+1)+min);   //Integer.valueOf(args[0]);
+        int j = (int) (Math.random()*(max-min+1)+min);
+        int k = (int) (Math.random()*(max-min+1)+min);
         HW3 hw3 = new HW3();
-        hw3.check(i, j, k);
+        while(hw3.check(i, j, k) != 9){
+           i = (int) (Math.random()*(max-min+1)+min);   //Integer.valueOf(args[0]);
+         j = (int) (Math.random()*(max-min+1)+min);
+         k = (int) (Math.random()*(max-min+1)+min);
+        System.out.println("CHECKING: " + i + " " + j + " " + k);
+        }
+        //hw3.check(i, j, k);
       } catch (NumberFormatException ex) {
         System.err.println("bad number format!");
         System.exit(-1);
