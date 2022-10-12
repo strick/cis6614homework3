@@ -4,22 +4,23 @@ public class HW3 {   // To enable assertions, run with java -ea HW3
     int x = 0; // l4
     int y = 0; // l5
     if (i>0) { //l6
-      l7: y = 11;
+      y = 11;
     } else {   // l8
-      l9: y = 9;
+      y = 9;
     }
     ; // l11
     if (j>7) { // l12
-      l13: x = 6;
-      if (i <= 0 && k == 0) { // l14
-        l15: y = y-1;
-      }
+        x = 6;
+        if (i <= 0 && k == 0) { // l14
+          y = y-1;
+        }
     }
     ; // l18
-    l19: assert x+y != 9;
+    assert x+y != 9;
     return x+y;
   }
 
+  /*
   //@ requires args.length == 3;
   public static void main(String [] args) {
     System.out.println("running check...");
@@ -50,4 +51,5 @@ public class HW3 {   // To enable assertions, run with java -ea HW3
     System.out.println("... done with check");
     System.exit(0);
   }
+  */
 }
